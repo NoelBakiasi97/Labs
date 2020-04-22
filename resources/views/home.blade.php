@@ -2,18 +2,9 @@
 
 @section('title', 'AdminLTE')
 
-@section('content_header')
-    <h1 class="m-0 text-dark">Dashboard</h1>
-@stop
 
-@section('content')
-    <div class="row">
-        <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <p class="mb-0">You are logged in!</p>
-                </div>
-            </div>
-        </div>
-    </div>
+@section('content_header')
+    <h1 class="">Back Office <span><i class="fas fa-briefcase"></i></span></h1>
+    <h1 class="text-center mt-5">Here you can modify all of your data !</h1>
+    <p class="text-center mt-3">Use the sidebar on the left to navigate.</p>
 @stop

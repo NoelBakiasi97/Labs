@@ -11,6 +11,33 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-        //
+        DB::table('users')->insert([
+            'name'=>'noel',
+            'email'=>'noel@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'1',
+            'img'=>'avatar4.jpg'
+        ]);
+        DB::table('users')->insert([
+            'name'=>'Olivier',
+            'email'=>'ceo@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'2',
+            'img'=>'avatar2.jpg'
+        ]);
+        DB::table('users')->insert([
+            'name'=>'User',
+            'email'=>'user@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'4',
+            'img'=>'avatar1.jpg'
+        ]);
+        DB::table('users')->insert([
+            'name'=>'Editor',
+            'email'=>'redacteur@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'5',
+            'img'=>'avatar5.jpg'
+        ]);
     }
 }
