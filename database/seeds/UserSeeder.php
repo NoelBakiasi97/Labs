@@ -23,7 +23,7 @@ class UserSeeder extends Seeder
             'email'=>'ceo@mail.com',
             'password'=>Hash::make('lolzzz1997'),
             'role_id'=>'2',
-            'img'=>'avatar2.jpg'
+            'img'=>'avatar4.jpg'
         ]);
         DB::table('users')->insert([
             'name'=>'User',
@@ -38,6 +38,13 @@ class UserSeeder extends Seeder
             'password'=>Hash::make('lolzzz1997'),
             'role_id'=>'5',
             'img'=>'avatar5.jpg'
+        ]);
+        DB::table('users')->insert([
+            'name'=>'Manager',
+            'email'=>'manager@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'8',
+            'img'=>'avatar2.jpg'
         ]);
     }
 }

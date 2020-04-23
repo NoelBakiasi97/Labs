@@ -1,3 +1,7 @@
 <footer class="footer-section">
-		<h2>2017 All rights reserved. Designed by <a href="https://colorlib.com" target="_blank">Colorlib</a></h2>
-	</footer>
+	@if ($footer->position)
+		<h2>{{$footer->text}} <a href="{{$footer->link}}" target="_blank">Colorlib</a></h2>	
+	@else
+		<h2><a href="{{$footer->link}}" target="_blank">Colorlib </a>{{$footer->text}}</h2>
+	@endif
+</footer>

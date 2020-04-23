@@ -17,5 +17,11 @@ class DatabaseSeeder extends Seeder
         $this->call(CarouselSeeder::class);
         $this->call(AboutSeeder::class);
         $this->call(ServiceSeeder::class);
+        $this->call(TestimonialSeeder::class);
+        $this->call(StandoutSeeder::class);
+        $this->call(TitreSeeder::class);
+        $this->call(ContactSeeder::class);
+        $this->call(FooterSeeder::class);
+        $this->call(ArticleSeeder::class);
     }
 }

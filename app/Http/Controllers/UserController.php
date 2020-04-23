@@ -32,7 +32,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'role_id'=>'required',
-            'img' =>'required|image'
+            'img' =>'sometimes|required'
         ]);
         $users = User::find($id);
         $users->name = $request->input('name');

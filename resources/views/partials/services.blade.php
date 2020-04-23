@@ -1,7 +1,7 @@
 <div class="services-section spad">
 		<div class="container">
 			<div class="section-title dark">
-				<h2>Get in <span>the Lab</span> and see the services</h2>
+				<h2>{!! App\Helper\Color::green($titres->titreServices) !!}</h2>
 			</div>
 			<div class="row">
 				
@@ -20,13 +20,19 @@
 				@endforeach
 				
 			</div>
-     
-			<div class="text-right">
-				{{$services->links()}}
-			</div>
+			
+			@if (Request::is('pageServices'))
+				<div class="text-right">
+					{{$services->links()}}
+				</div>
+			@endif
 
 			<div class="text-center">
-				<a href="" class="site-btn">Browse</a>
+				@if (Request::is('pageServices'))
+					<a href="#spad" class="site-btn">Browse</a>
+				@else
+					<a href="{{route('pageServices')}}" class="site-btn">Browse</a>
+				@endif
 			</div>
 		</div>
 	</div>

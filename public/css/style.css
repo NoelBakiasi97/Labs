@@ -735,6 +735,13 @@ ul {
 	margin-bottom: 18px;
 }
 
+.promotion-section h2 span {
+	background: #6A23B5;
+	padding: 0 3px 5px;
+	display: inline-block;
+	color: #fff;
+}
+
 .promotion-section p {
 	color: #fff;
 	font-size: 24px;

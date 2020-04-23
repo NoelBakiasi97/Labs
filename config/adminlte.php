@@ -217,19 +217,59 @@ return [
             'icon' => 'fas fa-fw fa-user',
         ],
         [
+            'text' => 'Mails',
+            'url'  => '/emails',
+            'icon' => 'fas fa-envelope',
+        ],
+        [
+            'text' => 'Titles',
+            'url'  => '/titres',
+            'icon' => 'fas fa-heading',
+        ],
+        [
             'text' => 'Header',
             'url'  => '/header',
             'icon' => 'fas fa-images',
         ],
         [
             'text' => 'About',
-            'url'  => '/',
+            'url'  => '/about',
             'icon' => 'fas fa-question',
+        ],
+        [
+            'text' => 'Testimonials',
+            'url'  => '/testimonials',
+            'icon' => 'fas fa-comments',
         ],
         [
             'text' => 'Services',
             'url'  => '/services',
             'icon' => 'fas fa-tools',
+        ],
+        [
+            'text' => 'StandOut',
+            'url'  => '/standout',
+            'icon' => 'fas fa-caret-up',
+        ],
+        [
+            'text' => 'Contact',
+            'url'  => '/contact',
+            'icon' => 'fas fa-phone',
+        ],
+        [
+            'text' => 'Articles',
+            'url'  => '/articles',
+            'icon' => 'far fa-newspaper',
+        ],
+        [
+            'text' => 'Newsletter',
+            'url'  => '/newsletter',
+            'icon' => 'fas fa-newspaper',
+        ],
+        [
+            'text' => 'Footer',
+            'url'  => '/footer',
+            'icon' => 'fas fa-shoe-prints',
         ],
         
     ],

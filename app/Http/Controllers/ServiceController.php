@@ -15,7 +15,8 @@ class ServiceController extends Controller
     public function index()
     {
         $services = Service::all();
-        return view('backoffice.services.servicesIndex', compact('services', 'servicesHaut'));
+        $services2 = Service::all();
+        return view('backoffice.services.servicesIndex', compact('services', 'servicesHaut', 'services2'));
     }
 
     

@@ -7,8 +7,11 @@ Auth::routes();
 Route::get('/backoffice', 'HomeController@index')->name('home');
 
 
-//WELCOME
+//PAGES
 Route::get('/', 'WelcomeController@index')->name('welcome');
+Route::get('/pageServices', 'PageServices@index')->name('pageServices');
+Route::get('/pageBlog', 'PageBlog@index')->name('pageBlog');
+Route::get('/pageContact', 'PageContact@index')->name('pageContact');
 
 
 //USERS
@@ -17,6 +20,20 @@ Route::get('/editUsers/{id}', 'UserController@edit')->name('editUsers');
 Route::post('/updateUsers/{id}', 'UserController@update')->name('updateUsers');
 Route::get('/deleteUsers/{id}', 'UserController@destroy')->name('deleteUsers');
 
+
+//MAIL-NEWSLETTER
+Route::get('/emails', 'FormController@index')->name('emails');
+Route::post('/saveMail', 'FormController@store')->name('saveEmail');
+Route::get('/newsletter', 'NewsletterController@index')->name('newsletter');
+Route::post('/saveNewsletter', 'NewsletterController@store')->name('saveNewsletter');
+
+
+
+
+//TITRES
+Route::get('/titres', 'TitreController@index')->name('titres');
+Route::get('/editTitres/{id}', 'TitreController@edit')->name('editTitres');
+Route::post('/updateTitres/{id}', 'TitreController@update')->name('updateTitres');
 
 
 //HEADER
@@ -30,8 +47,22 @@ Route::get('/editHeader/{id}', 'HeaderController@editHeader')->name('editHeader'
 Route::post('/updateHeader/{id}', 'HeaderController@updateHeader')->name('updateHeader');
 
 
+//ABOUT
+Route::get('/about', 'AboutController@index')->name('about');
+Route::get('/editAbout/{id}', 'AboutController@edit')->name('editAbout');
+Route::post('/updateAbout/{id}', 'AboutController@update')->name('updateAbout');
+
+
+//TESTIMONIAL
+Route::get('/testimonials', 'TestimonialController@index')->name('testimonials');
+Route::get('/addTestimonial', 'TestimonialController@create')->name('addTestimonial');
+Route::post('/saveTestimonial', 'TestimonialController@store')->name('saveTestimonial');
+Route::get('/editTestimonial/{id}', 'TestimonialController@edit')->name('editTestimonial');
+Route::post('/updateTestimonial/{id}', 'TestimonialController@update')->name('updateTestimonial');
+Route::get('/deleteTestimonial/{id}', 'TestimonialController@destroy')->name('deleteTestimonial');
+
+
 //SERVICES
-Route::get('/servicesNav', 'ServiceController@blade')->name('servicesNav');
 Route::get('/services', 'ServiceController@index')->name('services');
 Route::get('/addServices', 'ServiceController@create')->name('addServices');
 Route::post('/saveServices', 'ServiceController@store')->name('saveServices');
@@ -40,9 +71,24 @@ Route::post('/updateServices/{id}', 'ServiceController@update')->name('updateSer
 Route::get('/deleteServices/{id}', 'ServiceController@destroy')->name('deleteServices');
 
 
-//BLOG
-Route::get('/blog', 'BlogController@index')->name('blog');
+//STANDOUT
+Route::get('/standout', 'StandoutController@index')->name('standout');
+Route::get('/editStandout/{id}', 'StandoutController@edit')->name('editStandout');
+Route::post('/updateStandout/{id}', 'StandoutController@update')->name('updateStandout');
 
 
 //CONTACT
 Route::get('/contact', 'ContactController@index')->name('contact');
+Route::get('/editContact/{id}', 'ContactController@edit')->name('editContact');
+Route::post('/updateContact/{id}', 'ContactController@update')->name('updateContact');
+
+
+//FOOTER
+Route::get('/footer', 'FooterController@index')->name('footer');
+Route::get('/editFooter/{id}', 'FooterController@edit')->name('editFooter');
+Route::post('/updateFooter/{id}', 'FooterController@update')->name('updateFooter');
+
+
+//ARTICLES
+Route::get('/articles', 'ArticleController@index')->name('articles');
+
