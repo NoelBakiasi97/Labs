@@ -16,7 +16,8 @@ class TitreSeeder extends Seeder
             'titreServices'=>'GET IN [ THE LAB ] AND SEE THE SERVICES',
             'titreTeam'=>'GET IN [ THE LAB ] AND MEET THE TEAM',
             'titreStandout'=>'Are you ready to [ stand ] out?',
-            'titreContact'=>'CONTACT [ US ]'
+            'titreContact'=>'CONTACT [ US ]',
+            'titreFeatures'=>'GET IN [ THE LAB ] AND DISCOVER THE WORLD'
         ]);
     }
 }

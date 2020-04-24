@@ -91,4 +91,37 @@ Route::post('/updateFooter/{id}', 'FooterController@update')->name('updateFooter
 
 //ARTICLES
 Route::get('/articles', 'ArticleController@index')->name('articles');
+Route::get('/addArticle', 'ArticleController@create')->name('addArticle');
+Route::post('/saveArticle', 'ArticleController@store')->name('saveArticle');
+Route::get('/editArticle/{id}', 'ArticleController@edit')->name('editArticle');
+Route::post('/updateArticle/{id}', 'ArticleController@update')->name('updateArticle');
+Route::get('/showArticle/{id}', 'ArticleController@show')->name('showArticle');
+Route::get('/deleteArticle/{id}', 'ArticleController@destroy')->name('deleteArticle');
+Route::get('/searchArticle', 'ArticleController@search')->name('searchArticle');
 
+
+
+//CATEGORIES
+Route::get('/categories', 'CategorieController@index')->name('categories');
+Route::get('/addCategorie', 'CategorieController@create')->name('addCategorie');
+Route::post('/saveCategorie', 'CategorieController@store')->name('saveCategorie');
+Route::get('/editCategoire/{id}', 'CategorieController@edit')->name('editCategorie');
+Route::post('/updateCategorie/{id}', 'CategorieController@update')->name('updateCategorie');
+Route::get('/deleteCategorie/{id}', 'CategorieController@destroy')->name('deleteCategorie');
+Route::get('/searchCategorie', 'CategorieController@search')->name('searchCategorie');
+
+
+//TAGS
+Route::get('/tags', 'TagController@index')->name('tags');
+Route::get('/addTag', 'TagController@create')->name('addTag');
+Route::post('/saveTag', 'TagController@store')->name('saveTag');
+Route::get('/editTag/{id}', 'TagController@edit')->name('editTag');
+Route::post('/updateTag/{id}', 'TagController@update')->name('updateTag');
+Route::get('/deleteTag/{id}', 'TagController@destroy')->name('deleteTag');
+Route::get('/searchTag', 'TagController@search')->name('searchTag');
+
+
+//COMMENTAIRE
+Route::get('/comments', 'CommentController@index')->name('comments');
+Route::get('/addComment', 'CommentController@create')->name('addComment');
+Route::post('/saveComment', 'CommentController@store')->name('saveComment');

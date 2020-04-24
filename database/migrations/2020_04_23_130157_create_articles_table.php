@@ -18,6 +18,35 @@ class CreateArticlesTable extends Migration
             $table->string('img');
             $table->string('title');
             $table->text('text');
+            $table->bigInteger('user_id')->unsigned();
+            $table->foreign('user_id')
+                ->on('users')
+                ->references('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->bigInteger('categorie_id')->unsigned();
+            $table->foreign('categorie_id')
+                ->on('categories')
+                ->references('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->timestamps();
+        });
+
+        Schema::create('article_tag', function (Blueprint $table) {
+            $table->id();
+            $table->bigInteger('article_id')->unsigned();
+            $table->foreign('article_id')
+                ->on('articles')
+                ->references('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
+            $table->bigInteger('tag_id')->unsigned();
+            $table->foreign('tag_id')
+                ->on('tags')
+                ->references('id')
+                ->onDelete('cascade')
+                ->onUpdate('cascade');
             $table->timestamps();
         });
     }

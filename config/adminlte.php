@@ -257,14 +257,24 @@ return [
             'icon' => 'fas fa-phone',
         ],
         [
+            'text' => 'Newsletter',
+            'url'  => '/newsletter',
+            'icon' => 'fas fa-newspaper',
+        ],
+        [
             'text' => 'Articles',
             'url'  => '/articles',
             'icon' => 'far fa-newspaper',
         ],
         [
-            'text' => 'Newsletter',
-            'url'  => '/newsletter',
-            'icon' => 'fas fa-newspaper',
+            'text' => 'Categories',
+            'url'  => '/categories',
+            'icon' => 'fas fa-scroll',
+        ],
+        [
+            'text' => 'Tags',
+            'url'  => '/tags',
+            'icon' => 'fas fa-tag',
         ],
         [
             'text' => 'Footer',

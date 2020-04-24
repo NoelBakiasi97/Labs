@@ -14,6 +14,10 @@ class User extends Authenticatable
         return $this->belongsTo('App\Role', 'role_id');
     }
 
+    public function article(){
+        return $this->hasMany('App\Article');
+    }
+
 
     protected $fillable = [
         'name', 'email', 'password', 'role_id', 'img'
