@@ -3,6 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Categorie;
+use App\Header;
+use App\Titre;
+use App\Article;
+use App\Tag;
+use App\Footer;
+
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
@@ -47,6 +53,15 @@ class CategorieController extends Controller
         return redirect()->route('categories');
     }
 
+    public function show($id){
+        $articles=Article::where('categorie_id', $id)->paginate(3);
+        $header = Header::first();
+        $titres=Titre::first();
+        $categories=Categorie::inRandomOrder()->take(6)->get();
+        $tags=Tag::inRandomOrder()->take(9)->get();
+        $footer=Footer::first();
+        return view('pageBlog', compact('header', 'titres', 'footer', 'articles', 'categories', 'tags'));
+    }
 
     
     public function destroy($id)

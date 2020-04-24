@@ -2,9 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Article;
 use App\Categorie;
+use App\Header;
+use App\Titre;
+use App\Article;
 use App\Tag;
+use App\Footer;
+use App\Commentaire;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Auth;
@@ -46,7 +50,14 @@ class ArticleController extends Controller
     
     public function show($id)
     {
-        
+        $article=Article::find($id);
+        $header = Header::first();
+        $titres=Titre::first();
+        $categories=Categorie::inRandomOrder()->take(6)->get();
+        $tags=Tag::inRandomOrder()->take(9)->get();
+        $footer=Footer::first();
+        $comments=Commentaire::where('article_id', $id)->paginate(9);
+        return view('partials.blog.pageComment', compact('header', 'titres', 'footer', 'article', 'categories', 'tags', 'comments'));
     }
 
     

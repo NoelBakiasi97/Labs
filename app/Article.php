@@ -18,4 +18,8 @@ class Article extends Model
     public function tags(){
         return $this->belongsToMany('App\Tag', 'article_tag');
     }
+
+    public function comments(){
+        return $this->hasMany('App\Commentaire', 'article_id');
+    }
 }

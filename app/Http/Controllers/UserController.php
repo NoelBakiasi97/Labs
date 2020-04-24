@@ -30,12 +30,14 @@ class UserController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required',
+            'description'=>'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'role_id'=>'required',
             'img' =>'sometimes|required'
         ]);
         $users = User::find($id);
         $users->name = $request->input('name');
+        $users->description=$request->description;
         $users->email = $request->input('email');
         $users->role_id = $request->input('role_id');
         if($request->hasFile('img')){

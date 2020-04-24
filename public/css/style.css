@@ -1092,8 +1092,12 @@ ul {
 .post-meta {
 	margin-bottom: 40px;
 }
+.post-meta a{
+	color: #0b1033;
+	font-size: 12px;
+}
 
-.post-meta a {
+.post-meta span {
 	color: #0b1033;
 	font-size: 12px;
 	padding-left: 20px;
@@ -1101,7 +1105,7 @@ ul {
 	margin-left: 10px;
 }
 
-.post-meta a:after {
+.post-meta span:after {
 	position: absolute;
 	content: "";
 	width: 7px;
@@ -1112,7 +1116,7 @@ ul {
 	border-radius: 10px;
 }
 
-.post-meta a:first-child {
+.post-meta span:first-child {
 	margin-left: 0;
 }
 

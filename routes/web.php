@@ -11,6 +11,7 @@ Route::get('/backoffice', 'HomeController@index')->name('home');
 Route::get('/', 'WelcomeController@index')->name('welcome');
 Route::get('/pageServices', 'PageServices@index')->name('pageServices');
 Route::get('/pageBlog', 'PageBlog@index')->name('pageBlog');
+
 Route::get('/pageContact', 'PageContact@index')->name('pageContact');
 
 
@@ -107,6 +108,7 @@ Route::get('/addCategorie', 'CategorieController@create')->name('addCategorie');
 Route::post('/saveCategorie', 'CategorieController@store')->name('saveCategorie');
 Route::get('/editCategoire/{id}', 'CategorieController@edit')->name('editCategorie');
 Route::post('/updateCategorie/{id}', 'CategorieController@update')->name('updateCategorie');
+Route::get('/showCategorie/{id}', 'CategorieController@show')->name('showCategorie');
 Route::get('/deleteCategorie/{id}', 'CategorieController@destroy')->name('deleteCategorie');
 Route::get('/searchCategorie', 'CategorieController@search')->name('searchCategorie');
 
@@ -122,6 +124,6 @@ Route::get('/searchTag', 'TagController@search')->name('searchTag');
 
 
 //COMMENTAIRE
-Route::get('/comments', 'CommentController@index')->name('comments');
-Route::get('/addComment', 'CommentController@create')->name('addComment');
-Route::post('/saveComment', 'CommentController@store')->name('saveComment');
+// Route::get('/comments', 'CommentController@index')->name('comments');
+// Route::get('/addComment', 'CommentController@create')->name('addComment');
+// Route::post('/saveComment', 'CommentController@store')->name('saveComment');

@@ -12,7 +12,8 @@
                     <tr>
                         <th scope="col">Id</th>
                         <th scope="col">Nom</th>
-                        <th scope="col">Email</th>
+                        <th scope="col">Description</th>
+                        <th class="text-center" scope="col">Email</th>
                         <th scope="col">Role</th>
                         <th scope="col" class="text-center w-25">Image</th>
                         <th class="text-center" scope="col">Action</th>
@@ -23,10 +24,9 @@
                         <tr>
                             <th scope="row">{{$user->id}}</th>
                             <td>{{$user->name}}</td>
-                            <td>{{$user->email}}</td>
-                            <td>
-                                {{$user->role->role}}
-                            </td>
+                            <td>{{$user->name}}</td>
+                            <td class="w-50">{{$user->description}}</td>
+                            <td>{{$user->role->role}}</td>
                             <td class="text-center"><img class="w-25" src="{{'storage/'.$user->img}}" alt=""></td>
                             <td class="text-center">  
                                 {{-- @can('editUser',$user ,App\user::class) --}}
