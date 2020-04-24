@@ -14,7 +14,7 @@
                         <th scope="col">Nom</th>
                         <th scope="col">Email</th>
                         <th scope="col">Role</th>
-                        <th scope="col" class="text-center w-50">Image</th>
+                        <th scope="col" class="text-center w-25">Image</th>
                         <th class="text-center" scope="col">Action</th>
                     </tr>
                 </thead>
