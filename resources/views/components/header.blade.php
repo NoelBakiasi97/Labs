@@ -10,12 +10,14 @@
             <li class="{{Request::route()->getName()=='pageServices'?'active':''}}"><a href="{{route('pageServices')}}">Services</a></li>
             <li class="{{Request::route()->getName()=='pageBlog'?'active':''}}"><a href="{{route('pageBlog')}}">Blog</a></li>
             <li class="{{Request::route()->getName()=='pageContact'?'active':''}}"><a href="{{route('pageContact')}}">Contact</a></li>
-            <li class="{{Request::route()->getName()=='backoffice'?'active':''}}"><a href="{{url('/backoffice')}}">Backoffice</a></li>
+            @can('backoffice')
+                <li class="{{Request::route()->getName()=='backoffice'?'active':''}}"><a href="{{url('/backoffice')}}">Backoffice</a></li>
+            @endcan
 
             @guest
-            <li class="{{Request::route()->getName()=='login'?'active':''}}"><a href="{{route('login')}}">Login</a></li>
+            <li><a href="{{route('login')}}">Login</a></li>
             @else
-            <li class="{{Request::route()->getName()=='logout'?'active':''}}"><a href="{{ route('logout') }}" onclick="event.preventDefault();
+            <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
 				document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
                 <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     @csrf

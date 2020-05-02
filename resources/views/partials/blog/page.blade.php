@@ -43,9 +43,10 @@
             <div class="col-md-4 col-sm-5 sidebar">
                 <!-- Single widget -->
                 <div class="widget-item">
-                    <form action="#" class="search-form">
-                        <input type="text" placeholder="Search">
-                        <button class="search-btn"><i class="flaticon-026-search"></i></button>
+                    <form method="GET" action="{{route('searchArticle')}}" class="search-form">
+                        @csrf
+                        <input name='search' type="text" placeholder="Search">
+                        <button type="submit" class="search-btn"><i class="flaticon-026-search"></i></button>
                     </form>
                 </div>
                 <!-- Single widget -->
@@ -63,7 +64,7 @@
                     <h2 class="widget-title">Tags</h2>
                     <ul class="tag">
 						@foreach ($tags as $item)
-                        	<li><a href="">{{$item->tag}}</a></li>
+                        	<li><a href="{{route('showTag', $item->id)}}">{{$item->tag}}</a></li>
 						@endforeach
                     </ul>
                 </div>
@@ -72,9 +73,7 @@
                     <h2 class="widget-title">Quote</h2>
                     <div class="quote">
                         <span class="quotation">‘​‌‘​‌</span>
-                        <p>Vivamus in urna eu enim porttitor consequat. Proin vitae pulvinar libero. Proin ut hendrerit
-                            metus. Aliquam erat volutpat. Donec fermen tum convallis ante eget tristique. Sed lacinia
-                            turpis at ultricies vestibulum.</p>
+                        <p>{{$quote->text}}</p>
                     </div>
                 </div>
 

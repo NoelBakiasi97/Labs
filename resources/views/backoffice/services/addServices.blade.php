@@ -28,7 +28,7 @@
                 <div class="form-group row">
                     <label for="title" class="col-md-4 col-form-label  text-md-right">{{ __('Title') }}</label>
                     <div class="col-md-6">
-                        <input id="title" type="text" class="form-control" name="title">
+                        <input id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title">
                         @error('title')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -39,7 +39,7 @@
                 <div class="form-group row">
                     <label for="description" class="col-md-4 col-form-label  text-md-right">{{ __('Description') }}</label>
                     <div class="col-md-6">
-                        <input id="description" type="text" class="form-control" name="description">
+                        <input id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description">
                         @error('description')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

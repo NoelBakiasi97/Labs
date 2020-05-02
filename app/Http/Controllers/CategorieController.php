@@ -7,12 +7,16 @@ use App\Header;
 use App\Titre;
 use App\Article;
 use App\Tag;
+use App\Quote;
 use App\Footer;
 
 use Illuminate\Http\Request;
 
 class CategorieController extends Controller
 {
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+    }
     
     public function index()
     {
@@ -54,13 +58,14 @@ class CategorieController extends Controller
     }
 
     public function show($id){
-        $articles=Article::where('categorie_id', $id)->paginate(3);
+        $articles=Article::where('categorie_id', $id)->where('valide', true)->paginate(3);
         $header = Header::first();
         $titres=Titre::first();
         $categories=Categorie::inRandomOrder()->take(6)->get();
         $tags=Tag::inRandomOrder()->take(9)->get();
+        $quote=Quote::first();
         $footer=Footer::first();
-        return view('pageBlog', compact('header', 'titres', 'footer', 'articles', 'categories', 'tags'));
+        return view('pageBlog', compact('header', 'titres', 'footer', 'articles', 'categories', 'tags', 'quote'));
     }
 
     

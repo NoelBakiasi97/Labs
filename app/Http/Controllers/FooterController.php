@@ -7,6 +7,10 @@ use Illuminate\Http\Request;
 
 class FooterController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+    }
     
     public function index()
     {

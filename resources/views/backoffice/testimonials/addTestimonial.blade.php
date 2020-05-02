@@ -13,7 +13,7 @@
                 <div class="form-group row">
                     <label for="testimonial" class="col-md-4 col-form-label  text-md-right">{{ __('Testimonial') }}</label>
                     <div class="col-md-6">
-                        <input id="testimonial" type="text" class="form-control" name="testimonial">
+                        <input id="testimonial" type="text" class="form-control @error('testimonial') is-invalid @enderror" name="testimonial">
                         @error('testimonial')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
                 <div class="form-group row">
                     <label for="img" class="col-md-4 col-form-label  text-md-right">{{ __('Image') }}</label>
                     <div class="col-md-6">
-                        <input id="img" type="file" class="form-control" name="img">
+                        <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img">
                         @error('img')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
                 <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label  text-md-right">{{ __('Name') }}</label>
                         <div class="col-md-6">
-                            <input id="name" type="text" class="form-control" name="name">
+                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name">
                             @error('name')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -46,7 +46,7 @@
                 <div class="form-group row">
                         <label for="function" class="col-md-4 col-form-label  text-md-right">{{ __('Function') }}</label>
                         <div class="col-md-6">
-                            <input id="function" type="text" class="form-control" name="function">
+                            <input id="function" type="text" class="form-control @error('function') is-invalid @enderror" name="function">
                             @error('function')
                                 <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>

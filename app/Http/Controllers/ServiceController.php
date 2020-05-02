@@ -8,8 +8,8 @@ use Illuminate\Http\Request;
 class ServiceController extends Controller
 {
 
-    public function blade(){
-        return view('servicesNav');
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
     }
     
     public function index()
@@ -100,6 +100,11 @@ class ServiceController extends Controller
 
     public function store(Request $request)
     {
+        $validatedData = $request->validate([
+            'icone'=>'required',
+            'title' =>'required',
+            'description'=>'required',
+        ]);
         $services = new Service();
         $services->icone=$request->icone;
         $services->title=$request->title;
@@ -193,6 +198,11 @@ class ServiceController extends Controller
 
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'icone'=>'required',
+            'title' =>'required',
+            'description'=>'required',
+        ]);
         $services = Service::find($id);
         $services->icone=$request->icone;
         $services->title=$request->title;

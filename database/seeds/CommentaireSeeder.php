@@ -19,9 +19,9 @@ class CommentaireSeeder extends Seeder
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
         DB::table('commentaires')->insert([
-            'comment'=>"Wow what a great site! I'm amazed at how professional this looks and  j'ai perdu l'inspi mdr smah",
+            'comment'=>"Wow what a great site! I'm amazed at how professional this looks and  j'ai perdu ecoreune fois ahah",
             'article_id'=>3,
-            'user_id'=>4,
+            'user_id'=>3,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
     }

@@ -6,9 +6,9 @@
         <div class="mb-5">
             <div class="text-center">
                 <h1 class="text-white shadow-lg p-3 mt-3 mb- bg-primary rounded">Articles</h1>
-                {{-- can --}}
+                @can('add')
                     <a class="btn btn-primary my-3" href="{{route('addArticle')}}">Add</a>
-                {{-- endcan --}}
+                @endcan
             </div>
             <table class="table table-striped table-secondary">
                 <thead class="bg-dark text-warning">
@@ -34,12 +34,15 @@
                                 <li style="list-style:none;">{{$tag->tag}}</li>
                             @endforeach</ul></td>
                             <td class="text-center">  
-                                {{-- @can('edititem',$item ,App\item::class) --}}
-                                    <a class="btn btn-warning" href="{{route('editArticle', $item->id)}}">Edit</a>   
-                                {{-- @endcan --}}
-                                {{-- @can('deleteitem',$item ,App\item::class) --}}
+                                @can('valide',$item)
+                                    @if(!$item->valide)
+                                        <a class="btn btn-info" href="{{route('valideArticle', $item->id)}}">Validate</a>   
+                                    @endif
+                                @endcan
+                                @can('affichage', $item)
+                                    <a class="btn btn-warning mt-1" href="{{route('editArticle', $item->id)}}">Edit</a>   
                                     <a class="btn btn-danger mt-1" href="{{route('deleteArticle', $item->id)}}">Delete</a>    
-                                {{-- @endcan --}}
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

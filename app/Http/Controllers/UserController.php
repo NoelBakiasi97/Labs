@@ -9,6 +9,11 @@ use Illuminate\Support\Facades\Storage;
 
 class UserController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('ceo');
+        $this->middleware('editUser')->only('edit', 'update');
+    }
     
     public function index()
     {
@@ -49,11 +54,5 @@ class UserController extends Controller
         return redirect()->route('users');
     }
 
-    public function destroy($id){
-        $users = User::find($id);
-        Storage::disk('public')->delete($users->img);
-        $users->delete();
-        return redirect()->route('users');
-    }
 
 }

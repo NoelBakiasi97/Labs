@@ -12,7 +12,7 @@
                 <div class="form-group row">
                     <label for="categorie" class="col-md-4 col-form-label  text-md-right">{{ __('Categorie') }}</label>
                     <div class="col-md-6">
-                        <input id="categorie" type="text" class="form-control" name="categorie">
+                        <input id="categorie" type="text" class="form-control @error('categorie') is-invalid @enderror" name="categorie">
                         @error('categorie')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

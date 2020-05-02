@@ -9,6 +9,12 @@ use App\Mail\MailContact;
 
 class FormController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+        $this->middleware('auth')->only('store');
+    }
+
     public function index(){
         $form = Form::all();
         return view('backoffice.mailsIndex', compact('form'));

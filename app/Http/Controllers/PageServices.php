@@ -19,7 +19,7 @@ class PageServices extends Controller
         $services=Service::latest('id')->paginate(9);
         $services2=Service::latest('id')->take(6)->get();
         $contact=Contact::first();
-        $articles=Article::latest('id')->take(3)->get();
+        $articles=Article::latest('id')->where('valide', true)->take(3)->get();
         $footer=Footer::first();
         return view('pageServices', compact('header', 'services', 'footer', 'contact', 'titres', 'services2', 'articles'));
     }

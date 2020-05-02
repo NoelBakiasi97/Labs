@@ -2,11 +2,23 @@
 
 namespace App\Http\Controllers;
 
+use App\Categorie;
+use App\Header;
+use App\Titre;
+use App\Article;
 use App\Tag;
+use App\Quote;
+use App\Footer;
+use App\Commentaire;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class TagController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('AdminWebmaster')->except('show');
+    }
    
     public function index()
     {
@@ -35,7 +47,15 @@ class TagController extends Controller
     
     public function show($id)
     {
-        $tags=Tag::find($id);
+        $tag=Tag::find($id);
+        $articles=$tag->articles()->where('valide', true)->paginate(3);
+        $header = Header::first();
+        $titres=Titre::first();
+        $categories=Categorie::inRandomOrder()->take(6)->get();
+        $tags=Tag::inRandomOrder()->take(9)->get();
+        $quote=Quote::first();
+        $footer=Footer::first();
+        return view('pageBlog', compact('header', 'titres', 'footer', 'articles', 'categories', 'tags', 'quote'));
     }
 
     
@@ -65,7 +85,5 @@ class TagController extends Controller
         return redirect()->route('tags');
     }
 
-    public function search(){
-
-    }
+    
 }

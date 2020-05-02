@@ -29,12 +29,9 @@
                             <td>{{$user->role->role}}</td>
                             <td class="text-center"><img class="w-25" src="{{'storage/'.$user->img}}" alt=""></td>
                             <td class="text-center">  
-                                {{-- @can('editUser',$user ,App\user::class) --}}
+                                @can('users', $user)
                                     <a class="btn btn-warning" href="{{route('editUsers',$user->id)}}">Edit</a>   
-                                {{-- @endcan --}}
-                                {{-- @can('deleteUser',$user ,App\user::class) --}}
-                                    <a class="btn btn-danger" href="{{route('deleteUsers',$user->id)}}">Delete</a>
-                                {{-- @endcan --}}
+                                @endcan
                             </td>
                         </tr>
                     @endforeach

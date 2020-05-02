@@ -8,6 +8,10 @@ use Illuminate\Support\Facades\Storage;
 
 class TestimonialController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+    }
     
     public function index()
     {
@@ -26,7 +30,7 @@ class TestimonialController extends Controller
     {
         $validatedData = $request->validate([
             'testimonial' =>'required',
-            'img'=>'required',
+            'img'=>'required|image',
             'name'=>'required',
             'function'=>'required',
         ]);

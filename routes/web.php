@@ -99,6 +99,7 @@ Route::post('/updateArticle/{id}', 'ArticleController@update')->name('updateArti
 Route::get('/showArticle/{id}', 'ArticleController@show')->name('showArticle');
 Route::get('/deleteArticle/{id}', 'ArticleController@destroy')->name('deleteArticle');
 Route::get('/searchArticle', 'ArticleController@search')->name('searchArticle');
+Route::get('/validateArticle/{id}', 'ArticleController@valide')->name('valideArticle');
 
 
 
@@ -110,7 +111,6 @@ Route::get('/editCategoire/{id}', 'CategorieController@edit')->name('editCategor
 Route::post('/updateCategorie/{id}', 'CategorieController@update')->name('updateCategorie');
 Route::get('/showCategorie/{id}', 'CategorieController@show')->name('showCategorie');
 Route::get('/deleteCategorie/{id}', 'CategorieController@destroy')->name('deleteCategorie');
-Route::get('/searchCategorie', 'CategorieController@search')->name('searchCategorie');
 
 
 //TAGS
@@ -120,10 +120,14 @@ Route::post('/saveTag', 'TagController@store')->name('saveTag');
 Route::get('/editTag/{id}', 'TagController@edit')->name('editTag');
 Route::post('/updateTag/{id}', 'TagController@update')->name('updateTag');
 Route::get('/deleteTag/{id}', 'TagController@destroy')->name('deleteTag');
-Route::get('/searchTag', 'TagController@search')->name('searchTag');
+Route::get('/showTag/{id}', 'TagController@show')->name('showTag');
 
 
 //COMMENTAIRE
-// Route::get('/comments', 'CommentController@index')->name('comments');
-// Route::get('/addComment', 'CommentController@create')->name('addComment');
-// Route::post('/saveComment', 'CommentController@store')->name('saveComment');
+Route::post('/saveComment/{id}', 'CommentaireController@store')->name('saveComment');
+
+
+//QUOTE
+Route::get('/quote', 'QuoteController@index')->name('quote');
+Route::get('/editQuote/{id}', 'QuoteController@edit')->name('editQuote');
+Route::post('/updateQuote/{id}', 'QuoteController@update')->name('updateQuote');

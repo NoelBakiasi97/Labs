@@ -12,7 +12,7 @@
                 <div class="form-group row">
                     <label for="imgCar" class="col-md-4 col-form-label  text-md-right">{{ __('Image') }}</label>
                     <div class="col-md-6">
-                        <input id="imgCar" type="file" class="form-control" name="imgCar">
+                        <input id="imgCar" type="file" class="form-control @error('imgCar') is-invalid @enderror" name="imgCar">
                         @error('imgCar')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

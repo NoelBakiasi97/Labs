@@ -28,6 +28,14 @@ class UserSeeder extends Seeder
             'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.'
         ]);
         DB::table('users')->insert([
+            'name'=>'Webmaster',
+            'email'=>'webmaster@mail.com',
+            'password'=>Hash::make('lolzzz1997'),
+            'role_id'=>'3',
+            'img'=>'avatar4.jpg',
+            'description'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.'
+        ]);
+        DB::table('users')->insert([
             'name'=>'User',
             'email'=>'user@mail.com',
             'password'=>Hash::make('lolzzz1997'),

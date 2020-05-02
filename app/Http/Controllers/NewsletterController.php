@@ -9,6 +9,11 @@ use App\Mail\NewsletterMail;
 
 class NewsletterController extends Controller
 {
+
+    public function __construct(){
+        $this->middleware('AdminWebmaster')->only('index');
+    }
+
     public function index(){
         $newsletter=Newsletter::all();
         return view('backoffice.newsletterIndex', compact('newsletter'));

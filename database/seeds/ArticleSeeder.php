@@ -19,6 +19,7 @@ class ArticleSeeder extends Seeder
             'title'=>'GET IN THE LAB',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>1,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -27,6 +28,7 @@ class ArticleSeeder extends Seeder
             'title'=>'PROJECTS ONLINE',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>2,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -35,6 +37,7 @@ class ArticleSeeder extends Seeder
             'title'=>'SMART MARKETING',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>3,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -43,6 +46,7 @@ class ArticleSeeder extends Seeder
             'title'=>'LAST 3',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>4,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -51,6 +55,7 @@ class ArticleSeeder extends Seeder
             'title'=>'LAST 3',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>5,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);
@@ -59,6 +64,7 @@ class ArticleSeeder extends Seeder
             'title'=>'LAST 3',
             'text'=>'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur leo est, feugiat nec elementum id, suscipit id nulla.',
             'user_id'=>4,
+            'valide'=>true,
             'categorie_id'=>6,
             'created_at' => Carbon::now()->format('Y-m-d H:i:s')
         ]);

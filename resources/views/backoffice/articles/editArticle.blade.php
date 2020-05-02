@@ -13,7 +13,7 @@
             <div class="form-group row">
                 <label for="img" class="col-md-4 col-form-label  text-md-right">{{ __('Image') }}</label>
                 <div class="col-md-6">
-                    <input id="img" type="file" class="form-control" name="img">
+                    <input id="img" type="file" class="form-control @error('img') is-invalid @enderror" name="img">
                     @error('img')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -24,7 +24,7 @@
             <div class="form-group row">
                 <label for="title" class="col-md-4 col-form-label  text-md-right">{{ __('Title') }}</label>
                 <div class="col-md-6">
-                    <input value="{{ old('title',$articles->title) }}" id="title" type="text" class="form-control" name="title">
+                    <input value="{{ old('title',$articles->title) }}" id="title" type="text" class="form-control @error('title') is-invalid @enderror" name="title">
                     @error('title')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>
@@ -35,7 +35,7 @@
             <div class="form-group row">
                 <label for="text" class="col-md-4 col-form-label  text-md-right">{{ __('Text') }}</label>
                 <div class="col-md-6">
-                    <input value="{{ old('title',$articles->text) }}" id="text" type="text" class="form-control" name="text">
+                    <input value="{{ old('title',$articles->text) }}" id="text" type="text" class="form-control @error('text') is-invalid @enderror" name="text">
                     @error('text')
                     <span class="invalid-feedback" role="alert">
                         <strong>{{ $message }}</strong>

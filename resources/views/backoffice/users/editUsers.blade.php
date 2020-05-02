@@ -47,7 +47,7 @@
                     <div class="col-md-6">
                         <select class="form-control" name="role_id" id="role_id">
                             @foreach ($roles as $role)
-                                @if ($role->id!=1)
+                                @if ($role->id!=1 && $role->id!=2 && $role->id!=3)
                                     @if ($role->id===$users->role_id)
                                         <option selected value="{{$role->id}}">{{$role->role}}</option>
                                     @else

@@ -10,11 +10,11 @@ use Intervention\Image\ImageManagerStatic as Image;
 
 class HeaderController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+    }
+
     public function index()
     {
         $header=Header::all();
@@ -32,7 +32,7 @@ class HeaderController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'imgCar' =>'sometimes|image'
+            'imgCar' =>'required|image'
         ]);
 
         $carousel=new Carousel();

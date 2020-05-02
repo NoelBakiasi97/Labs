@@ -209,78 +209,105 @@ return [
 
     'menu' => [
         
-          
-        ['header' => 'account_settings'],
-        [
-            'text' => 'Users',
-            'url'  => '/users',
-            'icon' => 'fas fa-fw fa-user',
-        ],
-        [
-            'text' => 'Mails',
-            'url'  => '/emails',
-            'icon' => 'fas fa-envelope',
-        ],
-        [
-            'text' => 'Titles',
-            'url'  => '/titres',
-            'icon' => 'fas fa-heading',
-        ],
-        [
-            'text' => 'Header',
-            'url'  => '/header',
-            'icon' => 'fas fa-images',
-        ],
-        [
-            'text' => 'About',
-            'url'  => '/about',
-            'icon' => 'fas fa-question',
-        ],
-        [
-            'text' => 'Testimonials',
-            'url'  => '/testimonials',
-            'icon' => 'fas fa-comments',
-        ],
-        [
-            'text' => 'Services',
-            'url'  => '/services',
-            'icon' => 'fas fa-tools',
-        ],
-        [
-            'text' => 'StandOut',
-            'url'  => '/standout',
-            'icon' => 'fas fa-caret-up',
-        ],
-        [
-            'text' => 'Contact',
-            'url'  => '/contact',
-            'icon' => 'fas fa-phone',
-        ],
-        [
-            'text' => 'Newsletter',
-            'url'  => '/newsletter',
-            'icon' => 'fas fa-newspaper',
-        ],
-        [
-            'text' => 'Articles',
-            'url'  => '/articles',
-            'icon' => 'far fa-newspaper',
-        ],
-        [
-            'text' => 'Categories',
-            'url'  => '/categories',
-            'icon' => 'fas fa-scroll',
-        ],
-        [
-            'text' => 'Tags',
-            'url'  => '/tags',
-            'icon' => 'fas fa-tag',
-        ],
-        [
-            'text' => 'Footer',
-            'url'  => '/footer',
-            'icon' => 'fas fa-shoe-prints',
-        ],
+        
+        ['text' => 'User settings',
+        'can'=>'sidebarCeo',
+        'icon' => 'fas fa-user-cog',
+        'submenu'=>[
+            [
+                'text' => 'Users',
+                'url'  => '/users',
+                'icon' => 'fas fa-fw fa-user',
+            ],
+        ]
+    ],
+        
+        ['text' => 'Mails',
+        'can'=>'sidebarAdminWebmaster',
+        'icon' => 'far fa-envelope',
+        'submenu'=>[
+            [
+                'text' => 'Mails',
+                'url'  => '/emails',
+                'icon' => 'fas fa-envelope',
+            ],
+            [
+                'text' => 'Newsletter',
+                'url'  => '/newsletter',
+                'icon' => 'fas fa-newspaper',
+            ],
+        ]
+    ],
+    [
+        'text' => 'Articles',
+        'can'=>'sidebarRedac',
+        'url'  => '/articles',
+        'icon' => 'far fa-newspaper',
+    ],
+        ['text' => 'Modifications',
+        'can'=>'sidebarAdminWebmaster',
+        'icon' => 'fas fa-cogs',
+        'submenu'=>[
+            [
+                'text' => 'Titles',
+                'url'  => '/titres',
+                'icon' => 'fas fa-heading',
+            ],
+            [
+                'text' => 'Header',
+                'url'  => '/header',
+                'icon' => 'fas fa-images',
+            ],
+            [
+                'text' => 'About',
+                'url'  => '/about',
+                'icon' => 'fas fa-question',
+            ],
+            [
+                'text' => 'Testimonials',
+                'url'  => '/testimonials',
+                'icon' => 'fas fa-comments',
+            ],
+            [
+                'text' => 'Services',
+                'url'  => '/services',
+                'icon' => 'fas fa-tools',
+            ],
+            [
+                'text' => 'StandOut',
+                'url'  => '/standout',
+                'icon' => 'fas fa-caret-up',
+            ],
+            [
+                'text' => 'Contact',
+                'url'  => '/contact',
+                'icon' => 'fas fa-phone',
+            ],
+            
+            [
+                'text' => 'Categories',
+                'url'  => '/categories',
+                'icon' => 'fas fa-scroll',
+            ],
+            [
+                'text' => 'Tags',
+                'url'  => '/tags',
+                'icon' => 'fas fa-tag',
+            ],
+            [
+                'text' => 'Quote',
+                'url'  => '/quote',
+                'icon' => 'fas fa-quote-left',
+            ],
+            [
+                'text' => 'Footer',
+                'url'  => '/footer',
+                'icon' => 'fas fa-shoe-prints',
+            ],
+        ]
+    ],
+        
+        
         
     ],
 

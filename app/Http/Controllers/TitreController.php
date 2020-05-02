@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class TitreController extends Controller
 {
+    public function __construct(){
+        $this->middleware('AdminWebmaster');
+    }
    
     public function index()
     {
@@ -24,6 +27,13 @@ class TitreController extends Controller
     
     public function update(Request $request, $id)
     {
+        $validatedData = $request->validate([
+            'titreClients'=>'required|string',
+            'titreServices'=>'required|string',
+            'titreTeam'=>'required|string',
+            'titreStandout'=>'required|string',
+            'titreContact'=>'required|string',
+        ]);
         $titres=Titre::find($id);
         $titres->titreClients=$request->titreClients;
         $titres->titreServices=$request->titreServices;

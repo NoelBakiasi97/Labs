@@ -12,7 +12,7 @@
                 <div class="form-group row">
                     <label for="tag" class="col-md-4 col-form-label  text-md-right">{{ __('Tag') }}</label>
                     <div class="col-md-6">
-                        <input id="tag" type="text" class="form-control" name="tag">
+                        <input id="tag" type="text" class="form-control @error('tag') is-invalid @enderror" name="tag">
                         @error('tag')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>
